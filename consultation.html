@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Consultation Bookings Management</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d141b] dark:text-slate-100 font-display transition-colors duration-200">
+<div class="flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-[#cfdbe7] dark:border-slate-800 bg-white dark:bg-[#15202b] flex flex-col fixed inset-y-0">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Professional profile headshot of Rabab Ali" style='background-image: url("data:image/png;base64,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");'></div>
+<div class="flex flex-col">
+<h1 class="text-[#0d141b] dark:text-white text-base font-semibold leading-normal">Rabab Ali</h1>
+<p class="text-[#4c739a] dark:text-slate-400 text-xs font-normal leading-normal">Social Media Manager</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4c739a] hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<p class="text-sm font-semibold">Bookings</p>
+
+</a>
+
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4c739a] hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium">Clients</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4c739a] hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6">
+<button class="flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal shadow-sm hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+<span class="truncate">New Booking</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 ml-64 p-8">
+<div class="max-w-6xl mx-auto space-y-6">
+<!-- Page Heading -->
+<div class="flex flex-wrap items-end justify-between gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="text-[#0d141b] dark:text-white text-3xl font-bold tracking-tight">Consultation Bookings</h2>
+<p class="text-[#4c739a] dark:text-slate-400 text-sm">Manage and track your client consultation schedule and revenue flow.</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 rounded-lg border border-[#cfdbe7] dark:border-slate-700 h-10 px-4 bg-white dark:bg-[#15202b] text-[#0d141b] dark:text-white text-sm font-semibold hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-sm">download</span>
+<span>Export CSV</span>
+</button>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-[#15202b] border border-[#cfdbe7] dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-[#4c739a] dark:text-slate-400 text-sm font-medium">Total Bookings</p>
+<span class="material-symbols-outlined text-primary bg-primary/10 p-1.5 rounded-lg">event_available</span>
+</div>
+<p class="text-[#0d141b] dark:text-white tracking-tight text-3xl font-bold">128</p>
+<p class="text-[#078838] text-xs font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span> +12% from last month
+                        </p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-[#15202b] border border-[#cfdbe7] dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-[#4c739a] dark:text-slate-400 text-sm font-medium">Pending Requests</p>
+<span class="material-symbols-outlined text-amber-500 bg-amber-50 dark:bg-amber-500/10 p-1.5 rounded-lg">pending_actions</span>
+</div>
+<p class="text-[#0d141b] dark:text-white tracking-tight text-3xl font-bold">12</p>
+<p class="text-amber-600 dark:text-amber-400 text-xs font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">priority_high</span> 5 urgent actions
+                        </p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-[#15202b] border border-[#cfdbe7] dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-[#4c739a] dark:text-slate-400 text-sm font-medium">Total Revenue</p>
+<span class="material-symbols-outlined text-emerald-500 bg-emerald-50 dark:bg-emerald-500/10 p-1.5 rounded-lg">payments</span>
+</div>
+<p class="text-[#0d141b] dark:text-white tracking-tight text-3xl font-bold">$4,250</p>
+<p class="text-[#078838] text-xs font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span> +18% growth
+                        </p>
+</div>
+</div>
+<!-- Tabs & Search -->
+<div class="space-y-4">
+<div class="flex flex-wrap items-center justify-between border-b border-[#cfdbe7] dark:border-slate-800 bg-white dark:bg-[#15202b] rounded-t-xl px-4">
+<div class="flex gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary text-primary pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold">All Bookings</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-[#4c739a] dark:text-slate-400 hover:text-primary pb-[13px] pt-4 transition-all" href="#">
+<p class="text-sm font-bold">Confirmed</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-[#4c739a] dark:text-slate-400 hover:text-primary pb-[13px] pt-4 transition-all" href="#">
+<p class="text-sm font-bold">Pending</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-[#4c739a] dark:text-slate-400 hover:text-primary pb-[13px] pt-4 transition-all" href="#">
+<p class="text-sm font-bold">Completed</p>
+</a>
+</div>
+<div class="py-2 w-full max-w-sm">
+<label class="flex flex-col h-10 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg bg-slate-100 dark:bg-slate-800">
+<div class="text-[#4c739a] flex items-center justify-center pl-3">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-sm placeholder:text-[#4c739a]" placeholder="Search client name or email..."/>
+</div>
+</label>
+</div>
+</div>
+<!-- Table Container -->
+<div class="bg-white dark:bg-[#15202b] border border-[#cfdbe7] dark:border-slate-800 rounded-b-xl overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-[#cfdbe7] dark:border-slate-800">
+<tr>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#4c739a] dark:text-slate-400">Client Name</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#4c739a] dark:text-slate-400">Date &amp; Time</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#4c739a] dark:text-slate-400">Consultation Type</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#4c739a] dark:text-slate-400">Status</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#4c739a] dark:text-slate-400">Payment</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#4c739a] dark:text-slate-400 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-primary">JD</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-[#0d141b] dark:text-white">Jane Doe</span>
+<span class="text-xs text-[#4c739a]">jane.d@example.com</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm text-[#0d141b] dark:text-white">Oct 24, 2023</span>
+<span class="text-xs text-[#4c739a]">10:00 AM - 11:00 AM</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-700 text-[#0d141b] dark:text-white">
+                                            Strategy Call
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-400">
+<span class="w-1 h-1 rounded-full bg-emerald-500"></span> Confirmed
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm font-semibold text-[#0d141b] dark:text-white">$150.00</span>
+<p class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase">Paid</p>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-[#4c739a] hover:text-primary p-1">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-primary">MW</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-[#0d141b] dark:text-white">Mark Wilson</span>
+<span class="text-xs text-[#4c739a]">m.wilson@agency.co</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm text-[#0d141b] dark:text-white">Oct 25, 2023</span>
+<span class="text-xs text-[#4c739a]">2:30 PM - 3:30 PM</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-700 text-[#0d141b] dark:text-white">
+                                            Content Audit
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-400">
+<span class="w-1 h-1 rounded-full bg-amber-500"></span> Pending
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm font-semibold text-[#0d141b] dark:text-white">$200.00</span>
+<p class="text-[10px] font-bold text-amber-600 dark:text-amber-400 uppercase">Awaiting</p>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-[#4c739a] hover:text-primary p-1">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-primary">SL</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-[#0d141b] dark:text-white">Sarah Lee</span>
+<span class="text-xs text-[#4c739a]">sarah.lee@startup.com</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm text-[#0d141b] dark:text-white">Oct 22, 2023</span>
+<span class="text-xs text-[#4c739a]">Finished 3:00 PM</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-700 text-[#0d141b] dark:text-white">
+                                            Brand Strategy
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400">
+<span class="w-1 h-1 rounded-full bg-blue-500"></span> Completed
+                                        </span>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm font-semibold text-[#0d141b] dark:text-white">$350.00</span>
+<p class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase">Paid</p>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-[#4c739a] hover:text-primary p-1">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Footer Pagination (Simplified) -->
+<div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/30 flex justify-between items-center">
+<span class="text-xs text-[#4c739a] dark:text-slate-400 font-medium">Showing 1 to 3 of 128 results</span>
+<div class="flex gap-2">
+<button class="p-1 rounded border border-[#cfdbe7] dark:border-slate-700 bg-white dark:bg-[#15202b] text-[#4c739a] hover:bg-slate-100 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="p-1 rounded border border-[#cfdbe7] dark:border-slate-700 bg-white dark:bg-[#15202b] text-[#4c739a] hover:bg-slate-100">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

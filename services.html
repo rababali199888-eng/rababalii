@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rabab Ali - Professional Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f9d406",
+                        "heading-black": "#000000",
+                        "secondary-text": "#6b7280",
+                        "background-cream": "#fafaf8",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+            background-color: theme('colors.background-cream');
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .abstract-nodes {
+            background-image: radial-gradient(circle at 2px 2px, #f9d406 1px, transparent 0);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(circle at center, black, transparent 70%);
+        }
+        .nav-link {
+            @apply text-sm font-medium transition-colors duration-200 hover:text-primary text-heading-black;
+        }
+    </style>
+</head>
+<body class="text-heading-black selection:bg-primary/30">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="fixed top-0 z-50 w-full bg-background-cream/80 backdrop-blur-md border-b border-gray-100 px-6 md:px-20 lg:px-40 py-4">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="size-7 text-primary">
+<svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.578 8.578C5.528 11.628 3.451 15.514 2.609 19.745c-.842 4.23-.41 8.616 1.241 12.601 1.651 3.985 4.446 7.391 8.033 9.788 3.586 2.396 7.803 3.676 12.117 3.676s8.531-1.28 12.117-3.676c3.586-2.397 6.381-5.803 8.033-9.788 1.651-3.985 2.083-8.371 1.241-12.601-.841-4.231-2.918-8.117-5.968-11.167L24 24 8.578 8.578z"></path>
+</svg>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight">RABAB ALI</h2>
+</div>
+<div class="flex flex-1 justify-end gap-10">
+<nav class="hidden md:flex items-center gap-10">
+<a class="nav-link" href="portfolio.html">Portfolio</a>
+<a class="nav-link" href="services.html">Services</a>
+<a class="nav-link" href="about.html">About</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</nav>
+<a href="https://www.instagram.com/media_masters_lb/related_profiles/?hl=ar" target="_blank" rel="noopener noreferrer">
+  <button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#1c1a0d] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-all">
+    <span class="truncate">Let's Talk</span>
+  </button>
+</a>
+
+</div>
+</div>
+</header>
+<main class="relative flex flex-col items-center justify-center min-h-screen pt-20">
+<div class="absolute inset-0 abstract-nodes opacity-20 pointer-events-none"></div>
+<div class="max-w-[1000px] w-full px-6 text-center z-10">
+<div class="flex flex-col items-center gap-10">
+<div class="space-y-6">
+<h1 class="text-heading-black text-5xl md:text-7xl lg:text-8xl font-black leading-[1.1] tracking-tighter">
+                            Empowering Brands through <br/>
+<span class="bg-primary px-4 py-1">Strategic</span> Social Media
+                        </h1>
+<p class="text-secondary-text text-xl md:text-2xl font-normal max-w-2xl mx-auto leading-relaxed">
+                            Expert Account Management and Social Media Strategy focused on building meaningful digital connections and driving measurable growth.
+                        </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-5">
+    
+<a href="https://www.instagram.com/media_masters_lb/?hl=ar" target="_blank">
+<button class="flex min-w-[220px] cursor-pointer items-center justify-center rounded-full h-16 px-10 bg-primary text-heading-black text-lg font-bold hover:shadow-[0_10px_30px_rgba(249,212,6,0.3)] transition-all hover:-translate-y-1">
+                            View My Work
+                        </button></a>
+                        
+<a href="services.html" target="_blank">
+<button class="flex min-w-[220px] cursor-pointer items-center justify-center rounded-full h-16 px-10 border-2 border-primary text-heading-black text-lg font-bold hover:bg-primary transition-all">
+                            My Services
+                        </button></a>
+</div>
+</div>
+</div>
+</main>
+<section class="py-32 px-6 md:px-20 lg:px-40 bg-white" id="services">
+<div class="max-w-[1200px] mx-auto">
+<div class="mb-16">
+<h2 class="text-heading-black text-4xl md:text-5xl font-black mb-6">Strategic Services</h2>
+<div class="h-2 w-24 bg-primary"></div>
+<p class="text-secondary-text text-lg mt-8 max-w-2xl leading-relaxed">
+                        I offer a comprehensive suite of digital solutions designed to elevate your brand presence and engage your target audience effectively.
+                    </p>
+</div>
+<div class="grid grid-cols-1 gap-8">
+<div class="group flex flex-col md:flex-row items-stretch bg-background-cream rounded-2xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300">
+<div class="w-full md:w-1/3 aspect-video md:aspect-auto overflow-hidden">
+<img alt="Content Creation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUTR715eJrM7GszpA3GsEjBLeyx7SK6AktL8wNNn5Io_s4wVX2l833WwwbVcoAyZFI1QRP-AQx2eOTtM_aKzIts0Sc7EEVIl3fjNJe1wnRM4L1hJnWakkyTCGugyKu2cVOoTClrNS2_mBLXdtfz38JoYwawx96oRuo-bb14zyLhrXeVptnig0AmGtpvE6IuE9hgevopL1-G7LiQZYNNBPaMQjIBZlzSAvLrCvr7Ol6BseiOneDjG8F-bE3JS415KeCOztspkddl6Kh"/>
+</div>
+<div class="flex-1 p-10 flex flex-col justify-center">
+<div class="size-12 rounded-lg bg-primary flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-heading-black text-2xl">edit_note</span>
+</div>
+<h3 class="text-2xl font-bold text-heading-black mb-4">Content Creation</h3>
+<p class="text-secondary-text leading-relaxed max-w-lg">Crafting high-engagement visuals and high-converting copy tailored specifically for your target audience, ensuring your brand story is told effectively across all platforms.</p>
+</div>
+</div>
+<div class="group flex flex-col md:flex-row-reverse items-stretch bg-background-cream rounded-2xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300">
+<div class="w-full md:w-1/3 aspect-video md:aspect-auto overflow-hidden">
+<img alt="Website Design" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa342E483sd3mTsLGJWXuPSW9Ah05U1fLbQHq0S1VwdMXqoHUCArWPCD-wqSMWZ21x5f7iP-bDNbBg4je5IKergDozAkt-hIbRZWPkmYxQc9qn9kkTfPZwYN758rWUW0VrEieR5EiUKhhL26CkhNLEpMxHWuAnYN888V6rdcGprqldt-nTO4e-05pZZjiSCNsBhOYs9kQeWrmlJbiZSnA2IUObTBW0c6EpcxXaL9HusMzwcTlm8A2o_bLl1hy1lv2AMTqfsw5-CDfV"/>
+</div>
+<div class="flex-1 p-10 flex flex-col justify-center">
+<div class="size-12 rounded-lg bg-primary flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-heading-black text-2xl">web</span>
+</div>
+<h3 class="text-2xl font-bold text-heading-black mb-4">Website Design</h3>
+<p class="text-secondary-text leading-relaxed max-w-lg">Building modern, responsive, and user-centric websites that not only look stunning but are optimized for conversions and seamless user experiences.</p>
+</div>
+</div>
+<div class="group flex flex-col md:flex-row items-stretch bg-background-cream rounded-2xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300">
+<div class="w-full md:w-1/3 aspect-video md:aspect-auto overflow-hidden">
+<img alt="Photoshoot &amp; Reels" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdQfINMtmsGiea35OHCbmF-FsbMTJZKBJqHTYusLqQ1EFoUhrAgXEaVvYWD_rW5KInjIutSbY3eCh7SIAsn7IEThiP70l4voPrdPM6M59lNNNig5WYA1fzx03YIc6NckCqYqs8T8K_VpHeF6bG5vnnH_t31z-pbPHvtVsfYd8jaNRQT--qIrZA_DDqJ0GoIsYDWmCk4HtwVP7cuGw6DXL7pBPWcmnf48TobHE-vrEOYd3HHvc-ljQq3-wQoYgb9wlin-l78KBcKWWC"/>
+</div>
+<div class="flex-1 p-10 flex flex-col justify-center">
+<div class="size-12 rounded-lg bg-primary flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-heading-black text-2xl">videocam</span>
+</div>
+<h3 class="text-2xl font-bold text-heading-black mb-4">Photoshoot &amp; Reels</h3>
+<p class="text-secondary-text leading-relaxed max-w-lg">Professional photography and short-form video production. We capture the essence of your brand through high-quality visual storytelling that stops the scroll.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="group flex flex-col bg-background-cream rounded-2xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300">
+<div class="aspect-[16/10] overflow-hidden">
+<img alt="Graphic Design" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+ src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzOvzrle45Nt_1oFnGvHfwk9XFuCeFoVqLgA&s" /></div>
+<div class="p-10">
+<div class="size-12 rounded-lg bg-primary flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-heading-black text-2xl">brush</span>
+</div>
+<h3 class="text-2xl font-bold text-heading-black mb-4">Graphic Design</h3>
+<p class="text-secondary-text leading-relaxed">From brand identities to marketing collateral, we create visually compelling designs that communicate your message with clarity and impact.</p>
+</div>
+</div>
+<div class="group flex flex-col bg-background-cream rounded-2xl overflow-hidden border border-transparent hover:border-primary transition-all duration-300">
+<div class="aspect-[16/10] overflow-hidden">
+<img alt="Mobile Application" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.pexels.com/photos/5956083/pexels-photo-5956083.jpeg"/>
+</div>
+<div class="p-10">
+<div class="size-12 rounded-lg bg-primary flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-heading-black text-2xl">smartphone</span>
+</div>
+<h3 class="text-2xl font-bold text-heading-black mb-4">Mobile Application</h3>
+<p class="text-secondary-text leading-relaxed">Designing intuitive and engaging mobile interfaces. We focus on creating seamless app experiences that keep users coming back.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 px-6 md:px-20 lg:px-40" id="work">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h2 class="text-heading-black text-4xl md:text-5xl font-black mb-4">Featured Work</h2>
+<p class="text-secondary-text text-lg">A selection of impact-driven social campaigns and digital designs.</p>
+</div>
+<a class="text-heading-black font-bold flex items-center gap-2 group" href="https://www.behance.net/mediamasterslb">
+                        Explore all projects 
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="aspect-video bg-gray-200 rounded-2xl overflow-hidden relative group">
+<img alt="Portfolio Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaQDSYhEGsa9uo2qNFJZ8MjRjWQApubKcBDXwVohFKOBAAKqMB5tqkgKuLkX9CkTokTG8q20HABeuK1BjEwNdECFxSTlr-pF7_qsrDVtkJKXUqxKOtS7vAXiIR5Atfrf2WReUbSpM_qdIwv-RNvvLDyUUGErRt-lwvuZYi2UliR2MO1l4tX6RmuSYvIw5CQtKxsVLeOGkHIHq4puZ0Hkb3Cbi4LOviiCIuDMPzTfBzgJvHi4x_ReQh_3tbqfTS8oA0TaO40r6xxp_l"/>
+<div class="absolute inset-0 bg-heading-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-primary text-heading-black px-6 py-3 rounded-full font-bold">View Case Study</button>
+</div>
+<div class="absolute bottom-6 left-6 text-white pointer-events-none opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0">
+<p class="text-sm font-bold uppercase tracking-widest text-primary mb-1">Content Strategy</p>
+<h4 class="text-2xl font-black">E-commerce Growth Suite</h4>
+</div>
+</div>
+<div class="aspect-video bg-gray-200 rounded-2xl overflow-hidden relative group">
+<img alt="Portfolio Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlqjWRiyRjX8CQUzvJD5c6iNBqRGW5ROixQYEn1_-rvkNYHHY7TayPmD-3MQag2ITg6Kn-EjjVaCuiETn9kb-x4QiR8ohPXmGyjd2TAdfovXhXKdE-YOAlo3VIbtC3sxtQo8gavfg2yXJSPZlXOU-IgeKds7vMIlloyAA57B4ErNmqcidsO5Om1uoM9K8zGAQ-Z25Vzkhp3jhUT2kfbBwxNI_-BhDY5pjyk59cSI49ia3Icfiy1sJ8YC2qPdUvEzw1in8s5JPaprOq"/>
+<div class="absolute inset-0 bg-heading-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-primary text-heading-black px-6 py-3 rounded-full font-bold">View Case Study</button>
+</div>
+<div class="absolute bottom-6 left-6 text-white pointer-events-none opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0">
+<p class="text-sm font-bold uppercase tracking-widest text-primary mb-1">Brand Launch</p>
+<h4 class="text-2xl font-black">Lifestyle Brand Campaign</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-heading-black text-white py-20 px-6 md:px-20 lg:px-40">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 border-b border-gray-800 pb-16">
+<div class="space-y-6">
+<h2 class="text-3xl font-black">Let's build something <br/>extraordinary together.</h2>
+<p class="text-gray-400 max-w-sm">Currently accepting new projects and consulting opportunities.</p>
+<a class="inline-block text-2xl font-bold text-primary hover:underline" href="mailto:hello@rababali.com">rabab.ali199888@gmail.com</a>
+</div>
+<div class="grid grid-cols-2 gap-20">
+<div class="space-y-4">
+<h4 class="font-bold uppercase text-xs tracking-widest text-gray-500">Navigation</h4>
+<ul class="space-y-2">
+<li><a class="hover:text-primary transition-colors text-gray-400" href="portfolio.html">Portfolio</a></li>
+<li><a class="hover:text-primary transition-colors text-gray-400" href="services.html">Services</a></li>
+<li><a class="hover:text-primary transition-colors text-gray-400" href="about.html">About</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold uppercase text-xs tracking-widest text-gray-500">Social</h4>
+<ul class="space-y-2">
+<li><a class="hover:text-primary transition-colors text-gray-400" href="#">LinkedIn</a></li>
+<li><a class="hover:text-primary transition-colors text-gray-400" href="https://whatsapp.com/channel/0029VbB91kN90x2yzdYCVZ2v">whatsapp</a></li>
+
+<li><a class="hover:text-primary transition-colors text-gray-400" href="https://www.instagram.com/media_masters_lb/?hl=ar">Instagram</a></li>
+<li><a class="hover:text-primary transition-colors text-gray-400" href="https://www.facebook.com/61559557990136/about/?_rdr">facebook</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+<p>© 2026 Rabab Ali. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>

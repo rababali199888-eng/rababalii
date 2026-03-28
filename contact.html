@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Rabab Ali</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#ee2b2b"
+          },
+          fontFamily: {
+            display: ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-[#fcf8f8] text-[#1b0d0d] font-display">
+
+<!-- HEADER -->
+<header class="max-w-6xl mx-auto flex justify-between items-center py-6 px-4 border-b">
+  <h2 class="text-xl font-bold">Rabab Ali</h2>
+  <nav class="flex gap-6 items-center">
+
+    <a href="portfolio.html">Home</a>
+    <a href="services.html">services</a>
+    <a href="aboutt.html">about</a>
+    <a class="text-primary font-bold">Contact</a>
+    <a href="https://www.instagram.com/media_masters_lb/" target="_blank">
+      <button class="bg-primary px-4 py-2 rounded-lg font-bold text-white">
+        Let's Talk
+      </button>
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="max-w-6xl mx-auto px-4 py-14">
+  <h1 class="text-4xl font-extrabold mb-4">Contact Rabab Ali</h1>
+  <p class="text-gray-600 max-w-xl">
+    I'm here to help you elevate your digital presence through strategic social media management.
+  </p>
+</section>
+
+<!-- MAIN -->
+<main class="max-w-6xl mx-auto px-4 pb-20 grid md:grid-cols-2 gap-14">
+
+<!-- FORM -->
+<div>
+  <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
+
+  <form id="contactForm" class="space-y-5">
+
+    <div>
+      <label class="block mb-2 font-medium">Full Name</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        placeholder="Enter your name"
+        class="w-full rounded-lg border p-4"
+        required
+      />
+    </div>
+
+    <div>
+      <label class="block mb-2 font-medium">Email Address</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="email@example.com"
+        class="w-full rounded-lg border p-4"
+        required
+      />
+    </div>
+
+    <div>
+      <label class="block mb-2 font-medium">How can I help you?</label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Tell me about your project or inquiry..."
+        class="w-full rounded-lg border p-4 min-h-[150px]"
+        required
+      ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="bg-primary text-white font-bold px-8 py-4 rounded-lg"
+    >
+      Send Message
+    </button>
+
+  </form>
+</div>
+
+<!-- INFO -->
+<div class="space-y-10">
+
+  <div>
+    <h4 class="uppercase tracking-widest text-gray-500 font-bold mb-4">
+      Contact Information
+    </h4>
+
+    <p><strong>Email:</strong> rabab.ali199888@gmail.com</p>
+    <p><strong>Location:</strong> Lebanon, Nabatieh</p>
+  </div>
+
+  <div>
+    <h4 class="uppercase tracking-widest text-gray-500 font-bold mb-4">
+      Follow Me
+    </h4>
+
+    <a
+      href="https://www.google.com/maps?q=33.8938,35.5018"
+      target="_blank"
+      class="text-2xl"
+    >
+      📍
+    </a>
+  </div>
+
+  <div>
+    <input
+      type="text"
+      id="mapLink"
+      placeholder="Paste Google Maps location link"
+      class="w-full border p-3 rounded-lg"
+    />
+
+    <button
+      onclick="showMap()"
+      class="mt-3 bg-primary px-6 py-3 rounded-lg font-bold"
+    >
+      Show on Map
+    </button>
+
+    <div id="mapContainer" class="hidden mt-4 h-64 border rounded-lg overflow-hidden">
+      <iframe id="mapFrame" class="w-full h-full"></iframe>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<!-- JS -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  try {
+    const res = await fetch("http://localhost:3000/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, message })
+    });
+
+    const text = await res.text();
+    alert(text);
+    e.target.reset();
+
+  } catch {
+    alert("Server not connected ❌");
+  }
+});
+
+function showMap() {
+  const link = document.getElementById("mapLink").value;
+  if (!link) return alert("Paste a Google Maps link");
+
+  document.getElementById("mapFrame").src =
+    link.replace("/maps/", "/maps/embed/");
+  document.getElementById("mapContainer").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
+
+
+</section>
+<footer class="bg-heading-black text-white py-20 px-6 md:px-20 lg:px-40">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 border-b border-gray-800 pb-16">
+<div class="space-y-6">
+<h2 class="text-3xl font-black">Let's build something <br/>extraordinary together.</h2>
+<p class="text-gray-400 max-w-sm">Currently accepting new projects and consulting opportunities.</p>
+<a class="inline-block text-2xl font-bold text-primary hover:underline" href="mailto:hello@rababali.com">rabab.ali199888@gmail.com</a>
+</div>
+<div class="grid grid-cols-2 gap-20">
+<div class="space-y-4">
+<h4 class="font-bold uppercase text-xs tracking-widest text-gray-500">Navigation</h4>
+<ul class="space-y-2">
+<li><a class="hover:text-primary transition-colors text-gray-400" href="portfolio.html">Portfolio</a></li>
+<li><a class="hover:text-primary transition-colors text-gray-400" href="services.html">Services</a></li>
+<li><a class="hover:text-primary transition-colors text-gray-400" href="about.html">About</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold uppercase text-xs tracking-widest text-gray-500">Social</h4>
+<ul class="space-y-2">
+<li><a class="hover:text-primary transition-colors text-gray-400" href="#">LinkedIn</a></li>
+<li><a class="hover:text-primary transition-colors text-gray-400" href="https://whatsapp.com/channel/0029VbB91kN90x2yzdYCVZ2v">whatsapp</a></li>
+
+<li><a class="hover:text-primary transition-colors text-gray-400" href="https://www.instagram.com/media_masters_lb/?hl=ar">Instagram</a></li>
+<li><a class="hover:text-primary transition-colors text-gray-400" href="https://www.facebook.com/61559557990136/about/?_rdr">facebook</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+<p>© 2026 Rabab Ali. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>
